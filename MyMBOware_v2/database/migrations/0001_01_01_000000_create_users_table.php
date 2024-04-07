@@ -12,9 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->id(); // I can change this line after to use uuid() inspite of id()
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('code_dep', 25)
+                    ->references('code_dep')
+                    ->on('departements');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
