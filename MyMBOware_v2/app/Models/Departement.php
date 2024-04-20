@@ -19,4 +19,11 @@ class Departement extends Model
         'nom_dep',
         // 'code_dir',
     ];
+
+    /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'code_dep';
 }
