@@ -20,8 +20,8 @@ return new class extends Migration
             $table->date('DateFin_tache');
             $table->string('id_obj')->references('id_obj')->on('objectifs');
             $table->string('id_fiche')->references('id_fiche')->on('fiches');
-            $table->timestamp('updated_at');
-            $table->timestamp('created_at');
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->nullable();
         });
     }
 

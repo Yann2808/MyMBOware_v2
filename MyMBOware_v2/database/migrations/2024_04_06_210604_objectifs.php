@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('libelle_obj', 100)->nullable();
             $table->date('Deadline')->nullable();
             $table->string('code_dep', 25)->references('code_dep')->on('departements');
-            $table->timestamp('updated_at');
-            $table->timestamp('created_at');
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->nullable();
         });
     }
 
