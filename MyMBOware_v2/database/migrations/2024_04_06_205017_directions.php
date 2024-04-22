@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('directions', function(Blueprint $table){
-            $table->string('code_dir', 25)->primary();
+            $table->id();
+            $table->string('code_dir', 25);
             $table->string('nom_dir', 100)->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('created_at')->nullable();

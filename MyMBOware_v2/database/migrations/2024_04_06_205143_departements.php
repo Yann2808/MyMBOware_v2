@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('code_dep', 25);
             $table->string('nom_dep', 100)->nullable();
-            $table->string('code_dir'); //primaryKey on table Direction
+            $table->string('code_dir')->references('code_dir')->on('directions'); //primaryKey on table Direction
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('created_at')->nullable();
         });

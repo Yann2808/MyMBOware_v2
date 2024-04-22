@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('taches', function(Blueprint $table){
-            $table->string('id_tache', 25)->primary();
+            $table->id();
+            $table->string('id_tache', 25);
             $table->string('libelle_tache', 255);
             $table->string('description_tache');
             $table->decimal('progression_tache', 5);

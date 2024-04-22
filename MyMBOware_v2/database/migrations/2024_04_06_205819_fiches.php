@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('fiches', function(Blueprint $table){
-            $table->string('id_fiche', 10)->primary();
+            $table->id();
+            $table->string('id_fiche', 10);
             $table->string('nom_fiche', 50)->nullable();
             $table->date('DateDebut_fiche')->nullable();
             $table->date('DateFin_fiche')->nullable();

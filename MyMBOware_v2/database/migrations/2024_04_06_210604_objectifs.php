@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('objectifs', function(Blueprint $table){
-            $table->string('id_obj', 25)->primary();
+            $table->id();
+            $table->string('id_obj', 25);
             $table->string('libelle_obj', 100)->nullable();
             $table->date('Deadline')->nullable();
             $table->string('code_dep', 25)->references('code_dep')->on('departements');
