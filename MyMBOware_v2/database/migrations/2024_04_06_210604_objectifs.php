@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('objectifs', function(Blueprint $table){
             $table->id();
-            $table->string('id_obj', 25);
+            $table->string('id_obj', 25)->unique();
             $table->string('libelle_obj', 100)->nullable();
             $table->date('Deadline')->nullable();
             $table->string('code_dep', 25)->references('code_dep')->on('departements');

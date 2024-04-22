@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Departement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class DepartementController extends Controller
 {
@@ -13,7 +14,6 @@ class DepartementController extends Controller
     public function index()
     {
         $departements = Departement::all();
-        dd($departements);
         return view('departments.index', compact('departements'));
     }
 
@@ -34,10 +34,10 @@ class DepartementController extends Controller
         $departement->code_dep = $request->code_dep;
         $departement->nom_dep = $request->nom_dep;
         $departement->code_dir = $request->code_dir;
-
         $departement->save();
 
-        return view('departments.index');
+        //Redirection vers la route department.index
+        return Redirect::route('department.index');
     }
 
     /**

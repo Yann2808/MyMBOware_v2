@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('departements', function(Blueprint $table){
             $table->id();
-            $table->string('code_dep', 25);
+            $table->string('code_dep', 25)->unique();
             $table->string('nom_dep', 100)->nullable();
             $table->string('code_dir')->references('code_dir')->on('directions'); //primaryKey on table Direction
             $table->timestamp('updated_at')->nullable();

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('fiches', function(Blueprint $table){
             $table->id();
-            $table->string('id_fiche', 10);
+            $table->string('id_fiche', 10)->unique();
             $table->string('nom_fiche', 50)->nullable();
             $table->date('DateDebut_fiche')->nullable();
             $table->date('DateFin_fiche')->nullable();

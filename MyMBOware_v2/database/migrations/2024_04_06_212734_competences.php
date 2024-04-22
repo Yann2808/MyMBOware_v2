@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('competences', function(Blueprint $table)
 		{
 			$table->id();
-			$table->string('id_comp', 50);
+			$table->string('id_comp', 50)->uique();
 			$table->string('nom_comp', 50)->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('created_at')->nullable();

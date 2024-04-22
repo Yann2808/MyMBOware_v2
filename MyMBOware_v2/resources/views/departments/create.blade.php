@@ -29,7 +29,7 @@
                         <!-- Direction Code -->
                         <div class="mt-4">
                             <x-input-label for="code_dir" :value="__('Code de la direction de tutelle')" />
-                            <x-text-input id="code_dir" class="block mt-1 w-full" type="text" name="code_dir" :value="old('code_dir')" required autocomplete="code_dir" />
+                            <x-text-input id="code_dir" class="block mt-1 w-full" type="text" name="code_dir" :value="old('code_dir')" required autocomplete="code_dir" placeholder="Ce sera changer en selectBox" />
                             <x-input-error :messages="$errors->get('code_dir')" class="mt-2" />
                         </div>
 

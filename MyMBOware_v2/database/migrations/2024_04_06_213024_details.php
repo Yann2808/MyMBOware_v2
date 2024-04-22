@@ -19,7 +19,7 @@ return new class extends Migration
 			// $table->foreignid('id_eval', 50)->references('id_eval')->on('evaluations');
 			// $table->foreignid('id_comp', 50)->references('id_comp')->on('competences');
 			$table->string('note', 50)->nullable();
-			$table->primary(['id_eval','id_comp']);
+			$table->unique(['id_eval','id_comp']);
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('created_at')->nullable();
 		});

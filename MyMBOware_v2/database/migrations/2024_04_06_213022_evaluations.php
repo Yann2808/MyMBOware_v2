@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('evaluations', function(Blueprint $table)
 		{
 			$table->id();
-			$table->string('id_eval', 50);
+			$table->string('id_eval', 50)->unique();
 			$table->date('periodedebut_eval')->nullable();
 			$table->date('periodefin_eval')->nullable();
             $table->timestamp('updated_at')->nullable();
