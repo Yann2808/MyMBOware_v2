@@ -17,7 +17,7 @@ class Departement extends Model
     protected $fillable = [
         'code_dep',
         'nom_dep',
-        // 'code_dir',
+        'code_dir',
     ];
 
     /**

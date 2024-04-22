@@ -15,6 +15,8 @@ return new class extends Migration
 		{
 			$table->string('id_comp', 50)->primary();
 			$table->string('nom_comp', 50)->nullable();
+            $table->timestamp('updated_at');
+            $table->timestamp('created_at');
 		});
     }
 

@@ -16,6 +16,8 @@ return new class extends Migration
 			$table->string('id_eval', 50)->primary();
 			$table->date('periodedebut_eval')->nullable();
 			$table->date('periodefin_eval')->nullable();
+            $table->timestamp('updated_at');
+            $table->timestamp('created_at');
 		});
     }
 

@@ -12,7 +12,8 @@ class DepartementController extends Controller
      */
     public function index()
     {
-        //
+        $departements = Departement::all();
+        return view('departments.index', compact('departements'));
     }
 
     /**
@@ -20,7 +21,7 @@ class DepartementController extends Controller
      */
     public function create()
     {
-        //
+        return view('departments.create');
     }
 
     /**
@@ -28,7 +29,13 @@ class DepartementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $departement = new Departement();
+        $departement->code_dep = $request->code_dep;
+        $departement->nom_dep = $request->nom_dep;
+        $departement->code_dir = $request->code_dir;
+
+        $departement->save();
+        return view('departments.index');
     }
 
     /**
