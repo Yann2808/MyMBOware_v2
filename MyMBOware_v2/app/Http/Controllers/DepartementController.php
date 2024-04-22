@@ -13,6 +13,7 @@ class DepartementController extends Controller
     public function index()
     {
         $departements = Departement::all();
+        dd($departements);
         return view('departments.index', compact('departements'));
     }
 
@@ -35,6 +36,7 @@ class DepartementController extends Controller
         $departement->code_dir = $request->code_dir;
 
         $departement->save();
+
         return view('departments.index');
     }
 

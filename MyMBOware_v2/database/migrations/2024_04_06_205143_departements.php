@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('departements', function(Blueprint $table){
-            $table->string('code_dep', 25)->primary();
+            $table->id();
+            $table->string('code_dep', 25);
             $table->string('nom_dep', 100)->nullable();
             $table->string('code_dir'); //primaryKey on table Direction
             $table->timestamp('updated_at')->nullable();
