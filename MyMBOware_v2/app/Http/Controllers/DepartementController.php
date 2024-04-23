@@ -78,8 +78,11 @@ class DepartementController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Departement $departement)
+    public function destroy($id)
     {
-        //
+        $departement = Departement::find($id);
+        $departement->delete();
+
+        return Redirect::route('departement.index');
     }
 }

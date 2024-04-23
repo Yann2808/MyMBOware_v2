@@ -26,6 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/departements/{departement}', [DepartementController::class, 'show'])->name('departement.show');
     Route::get('/departements/{departement}/edit', [DepartementController::class, 'edit'])->name('departement.edit');
     Route::put('/departements/{departement}', [DepartementController::class, 'update'])->name('departement.update');
+    Route::delete('/departements/{departement}', [DepartementController::class, 'destroy'])->name('departement.destroy');
 
     //Les routes pour agir sur les directions
     Route::get('/directions', [DirectionController::class, 'index'])->name('direction.index');
