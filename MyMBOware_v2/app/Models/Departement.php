@@ -25,5 +25,5 @@ class Departement extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'code_dep';
+    protected $primaryKey = 'id';
 }

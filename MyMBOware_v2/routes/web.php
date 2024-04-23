@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/departements', [DepartementController::class, 'index'])->name('departement.index');
     Route::get('/departements/create', [DepartementController::class, 'create'])->name('departement.create');
     Route::post('/departements/store', [DepartementController::class, 'store'])->name('departement.store');
+    Route::get('/departements/{departement}', [DepartementController::class, 'show'])->name('departement.show');
 });
 
 require __DIR__.'/auth.php';

@@ -37,15 +37,17 @@ class DepartementController extends Controller
         $departement->save();
 
         //Redirection vers la route department.index
-        return Redirect::route('department.index');
+        return Redirect::route('departement.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Departement $departement)
+    public function show($id)
     {
-        //
+        $departement = Departement::find($id);
+
+        return view('departments.show', compact('departement'));
     }
 
     /**
