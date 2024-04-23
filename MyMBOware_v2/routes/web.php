@@ -23,6 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/departements/create', [DepartementController::class, 'create'])->name('departement.create');
     Route::post('/departements/store', [DepartementController::class, 'store'])->name('departement.store');
     Route::get('/departements/{departement}', [DepartementController::class, 'show'])->name('departement.show');
+    Route::get('/departements/{departement}/edit', [DepartementController::class, 'edit'])->name('departement.edit');
+    Route::put('/departements/{departement}', [DepartementController::class, 'update'])->name('departement.update');
 });
 
 require __DIR__.'/auth.php';
