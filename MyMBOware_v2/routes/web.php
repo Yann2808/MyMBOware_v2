@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\DepartementController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DirectionController;
+use App\Http\Controllers\DepartementController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,6 +26,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/departements/{departement}', [DepartementController::class, 'show'])->name('departement.show');
     Route::get('/departements/{departement}/edit', [DepartementController::class, 'edit'])->name('departement.edit');
     Route::put('/departements/{departement}', [DepartementController::class, 'update'])->name('departement.update');
+
+    //Les routes pour agir sur les directions
+    Route::get('/directions', [DirectionController::class, 'index'])->name('direction.index');
 });
 
 require __DIR__.'/auth.php';
